@@ -38,13 +38,23 @@ const App = () => {
       if (existingOrder && existingOrder.count > 1) {
         return prevList.map(item =>
           item.name === name
-            ? { ...item, count: item.count - 1 }
+            ? {...item, count: item.count - 1}
             : item
         );
       }
       return prevList.filter(item => item.name !== name);
     });
   };
+
+  const removeOrderItem = (name: string) => {
+    setOrdersList((prevList) => {
+      return prevList.filter(item => item.name !== name);
+    });
+  };
+
+  const getTotalPrice = ordersList.reduce((acc, item) => {
+    return acc + (item.price * item.count);
+  }, 0);
 
   return (
     <div className="App">
@@ -56,8 +66,10 @@ const App = () => {
         <div className="content">
           <div className="content-left">
             <OrderDetails
+              totalPrice={getTotalPrice}
               orderList={ordersList}
               removeOrder={removeOrder}
+              removeOrderItem={removeOrderItem}
             />
           </div>
 

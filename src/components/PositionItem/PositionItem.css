@@ -1,10 +1,16 @@
 .position-item {
-  background-color: #756F7D;
-  border: 1px solid #7B5B8D;
-  border-radius: 20px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border-radius: 16px;
   padding: 20px;
   display: flex;
   gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.position-item:hover {
+  background-color: #F0BF45;
+  box-shadow: 0 5px 15px rgb(234, 179, 42);
 }
 
 .position-image {
@@ -12,15 +18,14 @@
   width: 120px;
   height: 120px;
   border-radius: 10px;
+  object-fit: cover;
 }
-.position-info{
+
+.position-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-}
-.position-price {
-
 }
 
 .position-name {

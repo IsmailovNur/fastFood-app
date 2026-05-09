@@ -18,10 +18,10 @@ const PositionItem: FC<PositionItemProps> = ({position, clickHandler}) => {
         src={position.image}
         alt={position.name}
       />
-     <div className="position-info">
-       <h6 className="position-name">{position.name}</h6>
-       <span className="position-price"><b>{position.price}</b> KGS</span>
-     </div>
+      <div className="position-info">
+        <h6 className="position-name">{position.name}</h6>
+        <span><b>{position.price}</b> KGS</span>
+      </div>
     </div>
   );
 };

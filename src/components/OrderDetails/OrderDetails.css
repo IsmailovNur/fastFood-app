@@ -1,17 +1,19 @@
 .order-details {
   width: 100%;
-  border: 1px solid #7B5B8D;
-  background-color: #7B818A;
+  background-color: #fff;
   height: 100%;
   border-radius: 20px;
   padding: 20px;
-}
-.orders-list{
-
 }
 
 .orders-title {
   margin: 0;
   text-align: center;
   color: #2B2C31;
+}
+.orders-price{
+  margin: 0;
+  color: #569b59;
+  padding: 5px 0;
+  text-align: right;
 }

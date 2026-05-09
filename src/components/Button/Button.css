@@ -1,0 +1,38 @@
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #e3a344;
+  box-shadow: 0 5px 15px rgb(218, 150, 50);
+}
+
+.btn:active {
+  opacity: .7;
+}
+
+.btn img {
+  display: block;
+}
+
+.delete-btn:hover {
+  background-color: #B16763;
+  box-shadow: 0 5px 15px rgb(177, 103, 99);
+}
+
+.remove-btn:hover {
+  background-color: #f55a4e;
+  box-shadow: 0 5px 15px rgb(245, 90, 78);
+}
+
+@media screen and (max-width: 500px) {
+.btn{
+  padding: 5px;
+}
+}

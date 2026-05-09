@@ -1,7 +1,40 @@
-.order-item{
+.order-item {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 2px solid black;
+}
+
+.order-name {
+  font-weight: 700;
+}
+
+.order-count {
+  margin: 0 10px 0 auto;
+}
+
+.order-price {
+  width: 100px;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .order-price {
+    width: auto;
+  }
+
+  .order-item {
+    font-size: 14px;
+  }
+
+  .icon{
+    width: 25px;
+    height: 25px;
+  }
 }
