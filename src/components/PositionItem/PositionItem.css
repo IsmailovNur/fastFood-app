@@ -1,0 +1,28 @@
+.position-item {
+  background-color: #756F7D;
+  border: 1px solid #7B5B8D;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.position-image {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+.position-info{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+.position-price {
+
+}
+
+.position-name {
+  margin: 0;
+  font-size: 25px;
+}
