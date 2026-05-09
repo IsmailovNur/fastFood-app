@@ -12,3 +12,14 @@
   text-align: center;
   color: #2B2C31;
 }
+.content{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap-reverse;
+}
+.content-left{
+  flex: 1;
+}
+.content-right{
+  flex: 1;
+}

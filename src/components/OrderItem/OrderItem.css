@@ -1,0 +1,7 @@
+.order-item{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}

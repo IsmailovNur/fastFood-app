@@ -4,11 +4,15 @@ import "./PositionItem.css";
 
 interface PositionItemProps {
   position: Position;
+  clickHandler: () => void;
 }
 
-const PositionItem: FC<PositionItemProps> = ({position}) => {
+const PositionItem: FC<PositionItemProps> = ({position, clickHandler}) => {
   return (
-    <div className="position-item">
+    <div
+      className="position-item"
+      onClick={clickHandler}
+    >
       <img
         className="position-image"
         src={position.image}

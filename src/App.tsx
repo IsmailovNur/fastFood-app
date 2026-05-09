@@ -10,21 +10,63 @@ const App = () => {
   const [ordersList, setOrdersList] = useState<Order[]>([]);
   const positions: Position[] = PRODUCT_POSITIONS;
 
+  const addOrder = (position: Position) => {
+    setOrdersList((prevList) => {
+      const isExist = prevList.find(item => item.name === position.name);
+      if (isExist) {
+        return prevList.map(item => (
+            item.name === position.name
+              ? {...item, count: item.count + 1}
+              : item
+          )
+        );
+      }
+
+      return [...prevList,
+        {
+          name: position.name,
+          price: position.price,
+          count: 1
+        }];
+    });
+  };
+
+  const removeOrder = (name: string) => {
+    setOrdersList((prevList) => {
+      const existingOrder = prevList.find(item => item.name === name);
+
+      if (existingOrder && existingOrder.count > 1) {
+        return prevList.map(item =>
+          item.name === name
+            ? { ...item, count: item.count - 1 }
+            : item
+        );
+      }
+      return prevList.filter(item => item.name !== name);
+    });
+  };
+
   return (
     <div className="App">
       <div className="container">
         <h1 className="main-title">
           FastFood order App
         </h1>
-        <div className="content">
-          <OrderDetails
-            orderList={ordersList}
-            setOrderList={() => setOrdersList}
-          />
 
-          <Positions
-            positions={positions}
-          />
+        <div className="content">
+          <div className="content-left">
+            <OrderDetails
+              orderList={ordersList}
+              removeOrder={removeOrder}
+            />
+          </div>
+
+          <div className="content-right">
+            <Positions
+              positions={positions}
+              ordersChangeHandler={addOrder}
+            />
+          </div>
         </div>
       </div>
     </div>

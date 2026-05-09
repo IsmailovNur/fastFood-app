@@ -1,18 +1,22 @@
 import type { Position } from "../../types.ts";
 import type { FC } from "react";
 import PositionItem from "../PositionItem/PositionItem.tsx";
+import "./Positions.css";
 
 interface PositionProps {
   positions: Position[];
+  ordersChangeHandler: (position: Position) => void;
 }
 
-const Positions: FC<PositionProps> = ({positions}) => {
+const Positions: FC<PositionProps> = ({positions, ordersChangeHandler}) => {
+
   return (
-    <div>
+    <div className="positions">
       {
         positions.map(position => (
           <PositionItem
-            key={position.id}
+            clickHandler={() => ordersChangeHandler(position)}
+            key={position.name}
             position={position}
           />
         ))

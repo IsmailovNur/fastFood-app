@@ -1,9 +1,11 @@
 export interface Order {
   name: string;
   price: number;
-  image: string;
+  count: number;
 }
 
-export interface Position extends Order {
-  id: number;
+export interface Position {
+  image: string;
+  name: string;
+  price: number;
 }
